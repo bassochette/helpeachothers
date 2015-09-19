@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+div#content {
+    width: 100%; height: 100%;
+}
+.map-container {
+    margin : 0px;
+    padding: 0px;
+    width: 100%;
+    min-height: 100%;
+}
+
+.map-canvas {
+    height: 100vh !important;
+    min-height : 100% !important;
+}
+
+.hud{
+    z-index : 10000000000;
+}
+.hud-container{
+    z-index : 10000000;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    height : 200px;
+    width:200px;
+    background-color : #ffffff;
+}
+
+.hud.search {
+    height : 60px;
+    width : 25%;
+}
+
+
+
+

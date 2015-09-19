@@ -1,0 +1,139 @@
+<template name="hud">
+    <div class="hud-container">
+        <div class="container-fluid">
+            <div class="row">
+                {{> hudSearch}}
+            </div>
+            <div class="row">
+
+                {{> hudOptions}}
+            </div>
+            {{#if currentUser}}
+            <div class="row">
+                {{> manageServices}}
+            </div>
+            {{/if}}
+            <div class="row">
+                {{> loginButtons}}
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template name="manageServices">
+    <button class="btn btn-block btn-success" id="manageServicesOpen" data-toggle="modal"
+            data-target="#manageServicesModal">
+        Mes services
+    </button>
+    <div class="modal fade" id="manageServicesModal" tabindex="-1" role="dialog" aria-labelledby="Manage your services">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Manage your services</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="">Name</label>
+                                <input type="text" name="" id="contactName"/>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="">Phone Number</label>
+                                <input type="text" name="" id="contactPhone"/>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="">Adress</label>
+                                <input type="text" id="contactAddress"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        Logement
+                                        <input type="checkbox" id="setHousing"/>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Repas
+                                        <input type="checkbox" id="setFeeding"/>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Transport
+                                        <input type="checkbox" id="setTransportation"/>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Sanitaire
+                                        <input type="checkbox" id="setBathroom"/>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Internet
+                                        <input type="checkbox" id="setInternet"/>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Traduction
+                                        <input type="checkbox" id="setTranslation"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Sauvegarder mes services</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="hudSearch">
+    <input id="servicesSearch" type="text">
+</template>
+
+<template name="hudOptions">
+    <div class="hud options container" id="servicesOptions">
+
+        <div class="option-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul>
+                        <li>
+                            logement
+                            <input type="checkbox" id="showHousing" checked="{{housing}}"/>
+
+                        </li>
+                        <li>
+                            repas
+                            <input type="checkbox" id="showFeeding"/>
+                        </li>
+                        <li>
+                            transport
+                            <input type="checkbox" id="showTransportation"/>
+                        </li>
+                        <li>
+                            sanitaire
+                            <input type="checkbox" id="showBathroom"/>
+                        </li>
+                        <li>
+                            internet
+                            <input type="checkbox" id="showInternet"/>
+                        </li>
+                        <li>
+                            traduction
+                            <input type="checkbox" id="showTranslation"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
