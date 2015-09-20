@@ -1,8 +1,20 @@
 
 .searchBox {
     position : fixed;
-    top : 2vh;
-    left: 2vw;
+    top : 1vh;
+    left: 1vw;
     z-index : 10000;
-    width : 30vw;
+
+
+}
+
+.searchBox > input {
+
+    width : 25vw;
+    height: 5vh;
+
+    -webkit-box-shadow: 14px 13px 25px -1px rgba(0,0,0,0.36);
+    -moz-box-shadow: 14px 13px 25px -1px rgba(0,0,0,0.36);
+    box-shadow: 14px 13px 25px -1px rgba(0,0,0,0.36);
+
 }

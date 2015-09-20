@@ -3,33 +3,47 @@
         {{> loginButtons}}
     </div>
 
-    <div class="menu-item">
+
+    <hr/>
+
+    <div class="menu-item" id="showHousing">
+        {{#if displayHousingMarkers}}
         <img src="logologementnoir.png" alt=""/>
+        {{else}}
+        <img src="logologementblanc.png" alt=""/>
+        {{/if}}
     </div>
-    <div class="menu-item">
+    <div class="menu-item" id="showFeeding">
+        {{#if displayFeedingMarkers}}
         <img src="logorepasnoir.png" alt=""/>
+        {{else}}
+        <img src="logorepasblanc.png" alt=""/>
+        {{/if}}
     </div>
-    <div class="menu-item">
+    <div class="menu-item" id="showBathroom">
+        {{#if displayBathroomMarkers}}
         <img src="logosanitairenoir.png" alt=""/>
+        {{else}}
+        <img src="logosanitaireblanc.png" alt=""/>
+        {{/if}}
     </div>
-    <div class="menu-item">
+    <div class="menu-item" id="showTransportation">
+        {{#if displayTransportationMarkers}}
         <img src="logotransportnoir.png" alt=""/>
+        {{else}}
+        <img src="logotransportblanc.png" alt=""/>
+        {{/if}}
     </div>
+
+    <hr/>
 
     {{#if currentUser}}
     <div class="menu-item">
         <img src="boutonplus.png" alt=""/>
+        {{> manageServicesModal}}
     </div>
     {{/if}}
-</template>
 
-
-<template name="manageServices">
-    <button class="btn btn-block btn-success" id="manageServicesOpen" data-toggle="modal"
-            data-target="#manageServicesModal">
-        Mes services
-    </button>
-    {{> manageServicesModal}}
 </template>
 
 <template name="manageServicesModal">
@@ -104,45 +118,3 @@
 
 </template>
 
-<template name="hudSearch">
-    <input id="servicesSearch" type="text">
-</template>
-
-<template name="hudOptions">
-    <div class="hud options " id="servicesOptions">
-
-        <div class="option-container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul>
-                        <li>
-                            logement
-                            <input type="checkbox" id="showHousing" checked={{displayHousingMarkers}}/>
-
-                        </li>
-                        <li>
-                            repas
-                            <input type="checkbox" id="showFeeding" checked={{displayFeedingMarkers}}/>
-                        </li>
-                        <li>
-                            transport
-                            <input type="checkbox" id="showTransportation" checked={{displayTransportationMarkers}}/>
-                        </li>
-                        <li>
-                            sanitaire
-                            <input type="checkbox" id="showBathroom" checked={{displayBathroomMarkers}}/>
-                        </li>
-                        <li>
-                            internet
-                            <input type="checkbox" id="showInternet" checked={{displayInternetMarkers}}/>
-                        </li>
-                        <li>
-                            traduction
-                            <input type="checkbox" id="showTranslation" checked={{displayTranslationsMarkers}}/>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</template>

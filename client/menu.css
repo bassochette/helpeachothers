@@ -6,6 +6,10 @@
     top : 0;
     left: 95vw;
     background-color : rgb(192, 181, 127);
+
+    -webkit-box-shadow: -10px 0px 25px -1px rgba(0,0,0,0.36);
+    -moz-box-shadow: -10px 0px 25px -1px rgba(0,0,0,0.36);
+    box-shadow: -10px 0px 25px -1px rgba(0,0,0,0.36);
 }
 
 .menu-item> img {

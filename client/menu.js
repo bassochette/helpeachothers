@@ -1,29 +1,18 @@
-Template.hudOptions.events({
+Template.menu.events({
     'click #showHousing': function () {
         Session.set('housing', (!Session.get('housing')));
-        console.log('Show housing change : ' + Session.get('housing'))
     },
-    'change #showFeeding': function () {
+    'click #showFeeding': function () {
         Session.set('feeding', (!Session.get('feeding')));
     },
-    'change #showTransportation': function () {
+    'click #showTransportation': function () {
         Session.set('transportation', (!Session.get('transportation')));
     },
-    'change #showBathroom': function () {
+    'click #showBathroom': function () {
         Session.set('bathroom', (!Session.get('bathroom')));
-    },
-    'change #showInternet': function () {
-        Session.set('internet', (!Session.get('internet')));
-    },
-    'change #showTranslation': function () {
-        Session.set('translation', (!Session.get('translation')));
     }
 });
 
-
-function isCheckedFromSession(prop){
-    Session.get(prop) ? "checked" : "";
-}
 function getFromProfile(el) {
     if (Meteor.user())
         return Meteor.user().profile[el];
@@ -31,13 +20,19 @@ function getFromProfile(el) {
     return null;
 }
 
-Template.hudOptions.helpers({
-    displayHousingMarkers: isCheckedFromSession('housing'),
-    displayFeedingMarkers: isCheckedFromSession('feeding'),
-    displayBathroomMarkers: isCheckedFromSession('bathroom'),
-    displayTransportationMarkers: isCheckedFromSession('transportation'),
-    displayInternetMarkers: isCheckedFromSession('internet'),
-    displayTranslationsMarkers: isCheckedFromSession('translation'),
+Template.menu.helpers({
+    displayHousingMarkers: function(){
+        return Session.get('housing');
+    },
+    displayFeedingMarkers: function(){
+        return Session.get('feeding');
+    },
+    displayBathroomMarkers: function(){
+        return Session.get('bathroom');
+    },
+    displayTransportationMarkers: function(){
+        return Session.get('transportation');
+    }
 })
 ;
 
@@ -54,7 +49,7 @@ function isCheckedFromUserProfile(el) {
 
     return null;
 }
-
+/*
 Template.manageServices.helpers({
     name: getFromProfile('name'),
     phone: getFromProfile('phone'),
@@ -93,3 +88,4 @@ Template.manageServices.events({
     }
 })
 ;
+*/
