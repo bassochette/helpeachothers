@@ -16,3 +16,7 @@
     width : 5vw;
     height: auto;
 }
+
+#manageServicesModal {
+    z-index: 100;
+}

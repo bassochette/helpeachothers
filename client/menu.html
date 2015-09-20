@@ -39,14 +39,14 @@
 
     {{#if currentUser}}
     <div class="menu-item">
-        <img src="boutonplus.png" alt=""/>
-        {{> manageServicesModal}}
+        <img id="manageServices" src="boutonplus.png" alt=""/>
+
     </div>
     {{/if}}
 
 </template>
 
-<template name="manageServicesModal">
+<template name="manageServices">
 
     <div class="modal fade" id="manageServicesModal" tabindex="-1" role="dialog" aria-labelledby="Manage your services">
         <div class="modal-dialog" role="document">
@@ -54,58 +54,45 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Manage your services</h4>
+                    <h4 class="modal-title" id="myModalLabel">Propose ton aide</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="">Name</label>
-                                <input type="text" name="name" id="contactName" value="{{name}}"/>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="">Phone Number</label>
-                                <input type="text" name="phone" id="contactPhone" value="{{phone}}"/>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="">Adress</label>
-                                <input type="text" name="address" id="contactAddress" value="{{address}}"/>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        Logement
-                                        <input type="checkbox" id="setHousing" name="housing" checked=housing/>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Repas
-                                        <input type="checkbox" id="setFeeding" name="feeding" checked=feeding/>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Transport
-                                        <input type="checkbox" id="setTransportation" name="transportation"
-                                               checked=transportation/>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Sanitaire
-                                        <input type="checkbox" id="setBathroom" name="bathroom" checked=bathroom/>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Internet
-                                        <input type="checkbox" id="setInternet" name="internet" checked=internet/>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Traduction
-                                        <input type="checkbox" id="setTranslation" name="translation"
-                                               checked=translation/>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
 
-                    </div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="contactName" value="{{name}}"/>
+                    <label for="phone">Phone Number</label>
+                    <input type="text" name="phone" id="contactPhone" value="{{phone}}"/>
+                    <label for="address">Adress</label>
+                    <input type="text" name="address" id="contactAddress" value="{{address}}"/>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Logement
+                            <input type="checkbox" id="setHousing" name="housing" checked=housing/>
+                        </li>
+                        <li class="list-group-item">
+                            Repas
+                            <input type="checkbox" id="setFeeding" name="feeding" checked=feeding/>
+                        </li>
+                        <li class="list-group-item">
+                            Transport
+                            <input type="checkbox" id="setTransportation" name="transportation"
+                                   checked=transportation/>
+                        </li>
+                        <li class="list-group-item">
+                            Sanitaire
+                            <input type="checkbox" id="setBathroom" name="bathroom" checked=bathroom/>
+                        </li>
+                        <li class="list-group-item">
+                            Internet
+                            <input type="checkbox" id="setInternet" name="internet" checked=internet/>
+                        </li>
+                        <li class="list-group-item">
+                            Traduction
+                            <input type="checkbox" id="setTranslation" name="translation"
+                                   checked=translation/>
+                        </li>
+                    </ul>
+
 
                 </div>
                 <div class="modal-footer">

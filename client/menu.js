@@ -10,6 +10,10 @@ Template.menu.events({
     },
     'click #showBathroom': function () {
         Session.set('bathroom', (!Session.get('bathroom')));
+    },
+    'click #manageServices' : function(){
+        $('#manageServicesModal').modal('show');
+        $("#manageServicesModal").css("z-index", "1500");
     }
 });
 
@@ -49,17 +53,35 @@ function isCheckedFromUserProfile(el) {
 
     return null;
 }
-/*
+
 Template.manageServices.helpers({
-    name: getFromProfile('name'),
-    phone: getFromProfile('phone'),
-    address: getFromProfile('address'),
-    housing: isCheckedFromUserProfile('housing'),
-    feeding: isCheckedFromUserProfile('feeding'),
-    transportation: isCheckedFromUserProfile('transportation'),
-    bathroom: isCheckedFromUserProfile('bathroom'),
-    internet: isCheckedFromUserProfile('internet'),
-    translation: isCheckedFromUserProfile('translation')
+    name: function(){
+        return getFromProfile('name');
+    },
+    phone: function(){
+        return getFromProfile('phone')
+    },
+    address: function(){
+        return getFromProfile('address')
+    },
+    housing: function(){
+        return isCheckedFromUserProfile('housing')
+    },
+    feeding: function(){
+        return isCheckedFromUserProfile('feeding')
+    },
+    transportation: function(){
+        return isCheckedFromUserProfile('transportation')
+    },
+    bathroom: function(){
+        return isCheckedFromUserProfile('bathroom')
+    },
+    internet: function(){
+        return isCheckedFromUserProfile('internet')
+    },
+    translation: function() {
+        return isCheckedFromUserProfile('translation')
+    }
 });
 
 Template.manageServices.events({
@@ -88,4 +110,4 @@ Template.manageServices.events({
     }
 })
 ;
-*/
+
