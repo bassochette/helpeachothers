@@ -1,31 +1,39 @@
-<template name="hud">
-    <div class="hud-container">
-        <div class="container-fluid">
-            <div class="row">
-                {{> hudSearch}}
-            </div>
-            <div class="row">
-
-                {{> hudOptions}}
-            </div>
-            {{#if currentUser}}
-            <div class="row">
-                {{> manageServices}}
-            </div>
-            {{/if}}
-            <div class="row">
-                {{> loginButtons}}
-            </div>
-        </div>
+<template name="menu">
+    <div class="menu-item">
+        {{> loginButtons}}
     </div>
 
+    <div class="menu-item">
+        <img src="logologementnoir.png" alt=""/>
+    </div>
+    <div class="menu-item">
+        <img src="logorepasnoir.png" alt=""/>
+    </div>
+    <div class="menu-item">
+        <img src="logosanitairenoir.png" alt=""/>
+    </div>
+    <div class="menu-item">
+        <img src="logotransportnoir.png" alt=""/>
+    </div>
+
+    {{#if currentUser}}
+    <div class="menu-item">
+        <img src="boutonplus.png" alt=""/>
+    </div>
+    {{/if}}
 </template>
+
 
 <template name="manageServices">
     <button class="btn btn-block btn-success" id="manageServicesOpen" data-toggle="modal"
             data-target="#manageServicesModal">
         Mes services
     </button>
+    {{> manageServicesModal}}
+</template>
+
+<template name="manageServicesModal">
+
     <div class="modal fade" id="manageServicesModal" tabindex="-1" role="dialog" aria-labelledby="Manage your services">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -39,15 +47,15 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="">Name</label>
-                                <input type="text" name="" id="contactName"/>
+                                <input type="text" name="name" id="contactName" value="{{name}}"/>
                             </div>
                             <div class="col-md-4">
                                 <label for="">Phone Number</label>
-                                <input type="text" name="" id="contactPhone"/>
+                                <input type="text" name="phone" id="contactPhone" value="{{phone}}"/>
                             </div>
                             <div class="col-md-4">
                                 <label for="">Adress</label>
-                                <input type="text" id="contactAddress"/>
+                                <input type="text" name="address" id="contactAddress" value="{{address}}"/>
                             </div>
                         </div>
                         <div class="row">
@@ -55,44 +63,45 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         Logement
-                                        <input type="checkbox" id="setHousing"/>
+                                        <input type="checkbox" id="setHousing" name="housing" checked=housing/>
                                     </li>
                                     <li class="list-group-item">
                                         Repas
-                                        <input type="checkbox" id="setFeeding"/>
+                                        <input type="checkbox" id="setFeeding" name="feeding" checked=feeding/>
                                     </li>
                                     <li class="list-group-item">
                                         Transport
-                                        <input type="checkbox" id="setTransportation"/>
+                                        <input type="checkbox" id="setTransportation" name="transportation"
+                                               checked=transportation/>
                                     </li>
                                     <li class="list-group-item">
                                         Sanitaire
-                                        <input type="checkbox" id="setBathroom"/>
+                                        <input type="checkbox" id="setBathroom" name="bathroom" checked=bathroom/>
                                     </li>
                                     <li class="list-group-item">
                                         Internet
-                                        <input type="checkbox" id="setInternet"/>
+                                        <input type="checkbox" id="setInternet" name="internet" checked=internet/>
                                     </li>
                                     <li class="list-group-item">
                                         Traduction
-                                        <input type="checkbox" id="setTranslation"/>
+                                        <input type="checkbox" id="setTranslation" name="translation"
+                                               checked=translation/>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="row">
 
-                        </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary">Sauvegarder mes services</button>
+                    <button type="button" class="btn btn-primary" id="saveServiceInfo">Sauvegarder mes services</button>
                 </div>
             </div>
         </div>
     </div>
+
 </template>
 
 <template name="hudSearch">
@@ -100,7 +109,7 @@
 </template>
 
 <template name="hudOptions">
-    <div class="hud options container" id="servicesOptions">
+    <div class="hud options " id="servicesOptions">
 
         <div class="option-container">
             <div class="row">
@@ -108,28 +117,28 @@
                     <ul>
                         <li>
                             logement
-                            <input type="checkbox" id="showHousing" checked="{{housing}}"/>
+                            <input type="checkbox" id="showHousing" checked={{displayHousingMarkers}}/>
 
                         </li>
                         <li>
                             repas
-                            <input type="checkbox" id="showFeeding"/>
+                            <input type="checkbox" id="showFeeding" checked={{displayFeedingMarkers}}/>
                         </li>
                         <li>
                             transport
-                            <input type="checkbox" id="showTransportation"/>
+                            <input type="checkbox" id="showTransportation" checked={{displayTransportationMarkers}}/>
                         </li>
                         <li>
                             sanitaire
-                            <input type="checkbox" id="showBathroom"/>
+                            <input type="checkbox" id="showBathroom" checked={{displayBathroomMarkers}}/>
                         </li>
                         <li>
                             internet
-                            <input type="checkbox" id="showInternet"/>
+                            <input type="checkbox" id="showInternet" checked={{displayInternetMarkers}}/>
                         </li>
                         <li>
                             traduction
-                            <input type="checkbox" id="showTranslation"/>
+                            <input type="checkbox" id="showTranslation" checked={{displayTranslationsMarkers}}/>
                         </li>
                     </ul>
                 </div>

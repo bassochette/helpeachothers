@@ -1,0 +1,21 @@
+.map-container {
+    margin : 0px;
+    padding: 0px;
+    width: 100%;
+    min-height: 100%;
+}
+
+.map-canvas {
+    height: 100vh !important;
+    min-height : 100% !important;
+}
+
+
+.map{
+    width: 95vw;
+    height: 100vh !important;
+    min-height : 100% !important;
+    position : fixed;
+    top : 0;
+    left : 0;
+}

@@ -2,10 +2,10 @@ Template.map.helpers({
     servicesMapOptions: function () {
 
         if (GoogleMaps.loaded()) {
-            console.log("maps is loaded");
+
             return {
-                center: new google.maps.LatLng(-37.8136, 144.9631),
-                zoom: 8,
+                center: new google.maps.LatLng(50.84, 4.34),
+                zoom: 10,
                 disableDefaultUI: false,
                 zoomControl: false,
                 streetViewControl: false,
@@ -38,6 +38,30 @@ Template.map.onCreated(function () {
             geolocationSuccess,
             geolocationError
         )
+
+        //var markers = Markers.find();
+
+        markers = [];
+        markers.map(function(marker){
+
+            return new google.maps.Markers({
+                position : {
+                    lat : marker.lat,
+                    lng : marker.lng
+                },
+                map: GoogleMaps.maps.servicesMap.instance,
+                info : {
+                    services : marker.services,
+                    phone : marker.phone,
+                    email : marker.email,
+                    name : marker.name
+                }
+            });
+
+        });
+
+        Session.set('markers', markers);
+
 
     });
 });

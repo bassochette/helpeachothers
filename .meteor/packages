@@ -9,10 +9,10 @@ autopublish
 insecure
 dburles:google-maps
 miro:devtools
-react
 accounts-password
 accounts-ui
 bootstrap
 accounts-twitter
 accounts-github
 accounts-google
+react

@@ -1,0 +1,14 @@
+.menu{
+    width: 5vw;
+    height: 100vh !important;
+    min-height : 100% !important;
+    position : fixed;
+    top : 0;
+    left: 95vw;
+    background-color : rgb(192, 181, 127);
+}
+
+.menu-item> img {
+    width : 5vw;
+    height: auto;
+}
