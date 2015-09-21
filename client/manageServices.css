@@ -1,0 +1,60 @@
+.modal-body {
+    padding : 0px;
+}
+
+.modal-header {
+    background-color : rgb(197, 181, 127);
+    color : #ffffff;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 20px;
+}
+
+div.profileBox {
+
+    padding : 1em 2em;
+}
+
+.profileBox > input {
+    min-width: 100%;
+    border: 1px solid #cbcbcb;
+    border-radius : 0;
+    -webkit-appearance : none;
+}
+div.servicesRow{
+    width : 100%;
+    padding : 0px;
+}
+
+div.serviceBox{
+    width : 50%;
+    float: left;
+}
+div.serviceBox > label {
+    font-size : 20px;
+    margin-top : 1em;
+    margin-bottom: 0.5em;
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+div.serviceBox > input {
+
+    border-radius : 0;
+    -webkit-appearance : none;
+
+    border: 1px solid #cbcbcb;
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin-right : 20px !important;
+    margin-top : 0;
+    margin-bottom : 0;
+    margin-left: 0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}

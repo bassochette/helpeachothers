@@ -12,6 +12,7 @@ Template.search.events({
             if (tmpSearch !== search) {
                 search = tmpSearch;
             } else {
+                console.log("Send search geocoding");
 
                 if (GoogleMaps.loaded()) {
 

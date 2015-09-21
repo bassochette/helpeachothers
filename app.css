@@ -14,5 +14,7 @@ div#content {
     left : 75vw;
 }
 
-
+.hidden {
+    display: none;
+}
 

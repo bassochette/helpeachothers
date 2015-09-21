@@ -1,0 +1,55 @@
+<template name="manageServices">
+
+    <div class="modal fade" id="manageServicesModal" tabindex="-1" role="dialog" aria-labelledby="Manage your services">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Propose ton aide</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="profileBox">
+                        <label for="contactName">Nom: </label>
+                        <input type="text" name="name" id="contactName" value="{{name}}"/>
+                    </div>
+                    <div class="profileBox">
+                        <label for="contactPhone">Numéro de téléphone: </label>
+                        <input type="text" name="phone" id="contactPhone" value="{{phone}}"/>
+                    </div>
+                    <div class="profileBox">
+                        <label for="contactAddress">Adresse: <i class="fa fa-cog fa-spin {{isGeocoding}}" id="geocoderRunning"></i></label>
+                        <input type="text" name="address" id="contactAddress" value="{{address}}"/>
+                    </div>
+
+                    <div class="servicesRow">
+                        <div class="serviceBox">
+                            <label for="setHousing"><input type="checkbox" id="setHousing" name="housing" checked=housing/>Logement </label>
+
+                        </div>
+                        <div class="serviceBox">
+                            <label for="setFeeding"><input type="checkbox" id="setFeeding" name="feeding" checked=feeding/>Repas</label>
+
+                        </div>
+                    </div>
+                    <div class="servicesRow">
+                        <div class="serviceBox">
+                            <label for="setTransportation"><input type="checkbox" id="setTransportation" name="transportation"
+                                   checked=transportation/>Transport</label>
+
+                        </div>
+                        <div class="serviceBox">
+                            <label for="setbathroom"><input type="checkbox" id="setBathroom" name="bathroom" checked=bathroom/>Sanitaire </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary" id="saveServiceInfo">Sauvegarder mes services</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
