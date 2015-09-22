@@ -7,12 +7,12 @@ if (Meteor.isClient) {
             libraries: 'geometry,places'
         });
 
-        Session.set('housing', true);
-        Session.set('feeding', true);
-        Session.set('transportation', true);
-        Session.set('bathroom', true);
-        Session.set('internet', true);
-        Session.set('translation', true);
+        Session.set('housing', false);
+        Session.set('feeding', false);
+        Session.set('transportation', false);
+        Session.set('bathroom', false);
+        Session.set('internet', false);
+        Session.set('translation', false);
         Session.set('markers', []);
     });
 

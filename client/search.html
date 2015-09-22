@@ -1,5 +1,18 @@
 <template name="search">
     <div class="searchBox">
         <input type="text" id="mapSearch" placeholder="Rechercher un lieu"/>
+        <i class="fa fa-circle-o-notch fa-spin fa-4x {{geocoding}}"></i>
+
+        <div class="searchresults">
+            {{#each searchResults}}
+                {{> searchResult}}
+            {{/each}}
+        </div>
+    </div>
+</template>
+
+<template name="searchResult">
+    <div class="searchResultBox" >
+        {{formatted_address}}
     </div>
 </template>
